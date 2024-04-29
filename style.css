@@ -1,0 +1,190 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "outfit";
+    background: url("./assets/bg9.png");
+    background-size: cover; /* Ensure background image covers entire screen */
+    animation: moveBackground 30s linear infinite; /* Moving Background Animation */
+}
+
+@keyframes moveBackground {
+    from {
+        background-position: 0 0; /* Start position */
+    }
+    to {
+        background-position: 100% 0; /* End position */
+    }
+}
+
+
+
+.contact-container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    animation: fadeIn 1s ease; /* Fade In Animation */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1 {
+    margin-left: 420px;
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    color: #da9100 ;
+    opacity: 0; /* Start with opacity 0 for fade-in effect */
+    animation: fadeInRotateScaleH1 1s ease forwards; /* Fade In with Rotate and Scale Animation */
+}
+
+@keyframes fadeInRotateScaleH1 {
+    from {
+        opacity: 0;
+        transform: scale(0.5) rotate(-20deg);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+
+
+.contact-left {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+    animation: slideInLeft 1s ease; /* Slide In Animation */
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.contact-left-title h2 {
+    font-weight: 600;
+    font-size: 40px;
+    margin-bottom: 5px;
+    animation: pulseAnimation 2s ease-in-out infinite alternate; /* Animation */
+}
+
+@keyframes pulseAnimation {
+    0% {
+        transform: scale(1);
+        color:#C9C7B4; /* Initial color */
+    }
+    100% {
+        transform: scale(1.1);
+        color: #D2BF9B; /* Alternate color */
+    }
+}
+
+
+
+.contact-left-title hr {
+    border: none;
+    width: 120px;
+    height: 5px;
+    background-color:#395719;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.contact-inputs {
+    width: 400px;
+    height: 50px;
+    border: none;
+    outline: none;
+    padding-left: 25px;
+    font-weight: 500;
+    color: #666;
+    border-radius: 50px;
+    transition: border 0.3s ease; /* Transition for input focus */
+}
+
+.contact-left textarea {
+    height: 140px;
+    padding-top: 15px;
+    border-radius: 20px;
+}
+
+.contact-inputs:focus {
+    border: 2px solid #ff994f;
+}
+
+.contact-inputs::placeholder {
+    color: #a9a9aa;
+}
+
+.contact-left button {
+    display: flex;
+    align-items: center;
+    padding: 15px 30px;
+    font-size: 16px;
+    color: #fff;
+    gap: 10px;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(270deg, #ff994f, #fa6a86);
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Button Hover Animation */
+}
+
+.contact-left button:hover {
+    transform: scale(1.05); /* Button Hover Animation */
+}
+
+.contact-left button img {
+    height: 15px;
+}
+
+.contact-right img {
+    width: 500px;
+    border-radius: 50px;
+    background: transparent;
+    text-decoration: none;
+    animation: scaleAnimation 2s ease-in-out infinite alternate; /* Animation */
+}
+
+@keyframes scaleAnimation {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+
+
+@media (max-width: 800px) {
+    .contact-inputs {
+        width: 80vw;
+    }
+
+    .contact-right {
+        display: none;
+    }
+}
